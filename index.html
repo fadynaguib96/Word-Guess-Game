@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word Guess Game</title>
+</head>
+
+<body>
+
+    <div>
+        <p>Start Your Guessing Playa</p>
+    </div>
+
+    <div>
+        <p id="lines">word </p>
+        <p>Wins:<div id="win">0</div></p>
+        <p>Loses:<div id="lose">0</div></p>
+        <p>Letters already guessed:<div id="guessedlet"></div></p>
+    </div>
+
+            <script text="text/javascript">
+
+                //array of options
+            var options = ["fcbarcelona", "realmadrid", "manchesterunited", "manchestercity", "liverpool", "tottenham", "athleticomadrid", "chelsea", "juventus"];
+
+                //computer randomly guesses
+            var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+            console.log(computerGuess)
+
+                //split guesses words into array of strings
+            var computerWord = [...computerGuess];
+
+            console.log(computerWord)
+
+                //makes empty array and replaces strings with _
+
+            var guessline = [];
+
+            for (var i=0; i < computerGuess.length; i++) {
+                guessline[i]= " _ ";
+            }
+            console.log(guessline)
+
+            var remainingLetters = guessline.length;
+
+                //joins _ into one word instead of strings 
+            var guessline2 = guessline.join("");
+            document.getElementById("lines").innerHTML = guessline2;
+         
+                // var guessline2 = guessline.join("");
+
+                //starting meter
+
+            var remaining = computerGuess.length
+            var startingScore = 5;
+            console.log(startingScore)
+
+                //empty array for wrong guesses
+
+            var alreadyGuessed = [];
+            console.log(alreadyGuessed)
+
+            // declare wins and losses 
+
+            var wins = 0;
+            var losses = 0;
+            document.getElementById("win").innerHTML = wins;
+       
+
+
+
+
+                // function to restart game 
+
+            function resetGame (event) {
+                var anyKey = event.onkeyup
+
+                computerGuess;
+                console.log(computerGuess)
+                computerWord;
+                guessline = [];
+                guessline2;
+                alreadyGuessed = [];
+                startingScore;
+   
+               
+
+            }
+                
+            
+
+
+                
+
+           
+            //when user starts interacting
+
+
+
+            document.onkeyup = function () {
+            var userGuess =  String.fromCharCode(event.keyCode).toLowerCase()
+            ;
+
+            console.log(userGuess)
+
+        
+            if (startingScore > 0) {
+            
+                // for loop for searching through guesses computer word for user guesses key
+
+            for (var i=0; i < computerWord.length; i++) {
+
+                // if userkey is found in the computerword, then it is replaced with _ on _ array at that index
+
+                if(computerWord[i] === userGuess) {
+                    var isRight = false;
+
+                    // var correctLetter = computerWord[i];
+            
+                    guessline[i]=userGuess;
+                    guessline2 = guessline.join("");
+                    document.getElementById("lines").innerHTML = guessline2;
+                    console.log(guessline2)
+                    remainingLetters--
+
+              
+                // console.log(correctLetter)
+                console.log("correct") 
+                console.log(guessline)
+                document.getElementById("lines").innerHTML = guessline2;
+                console.log(remainingLetters) 
+                
+                }
+
+                    else if (remainingLetters === 0) {
+                        console.log("Congrats!!! You won!")
+                        wins++
+                        document.getElementById("win").innerHTML = wins;
+                        // resetGame(event);
+                    
+                }
+
+                
+
+                } 
+
+                // if isRight isn't false (as in the user's guess was not found in the computerword), the letter would be pushed to the alreadyGuessed array
+                if(isRight !== false) {
+
+                        console.log("Try Again")
+                        alreadyGuessed.push(userGuess)
+                        document.getElementById("guessedlet").innerHTML = alreadyGuessed;
+                        startingScore--
+                        console.log(startingScore)
+                 
+
+                                      }
+
+        
+                                      
+                                      }
+
+                else {
+                    losses++
+                    document.getElementById("lose").innerHTML = losses;
+                    console.log("You ran out of remaining guesses! Press any key to restart!");
+                    // resetGame(event);
+
+                   
+            } 
+            
+                }
+
+                          
+
+            
+
+        
+
+            
+                
+          
+
+            
+
+           
+                 
+
+
+            
+            
+            
+            </script>
+    
+</body>
+
+</html>
