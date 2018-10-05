@@ -63,13 +63,8 @@
                      guesslineJoined = guessline.join("");
                     
                      remainingLetters--
-
-
-
-                     console.log("correct")
-                     console.log(guessline)
-                     document.getElementById("lines").innerHTML = guesslineJoined;
-                     console.log(remainingLetters)
+                    document.getElementById("lines").innerHTML = guesslineJoined;
+                    
 
                  }
              }
@@ -83,22 +78,24 @@
                          if (userGuess === alreadyGuessed[i]) {
                                      var isIllegal = false
                                      document.getElementById("guessmes").innerHTML = "You already guesses this letter!";
-                                     var indLocation = alreadyGuessed.indexOf(userGuess)
-                                    //  console.log(alreadyGuessed[indLocation])
-                                     alreadyGuessed.replace(alreadyGuessed[indLocation], userGuess)
+                                    //  var indLocation = alreadyGuessed.indexOf(userGuess)
 
+
+                                    
+                                    //  alreadyGuessed = alreadyGuessed.join("").replace(alreadyGuessed[indLocation], userGuess).split("");
                                      
-                             
+                                     
+                                    console.log("already guessed: " + alreadyGuessed)
                          
 
                                  }}
 
-                 alreadyGuessed.push(userGuess)
-                
-
-                 if (isIllegal !== false) {
-                     startingScore-- 
-                 }
+                                 
+                                 
+                    if (isIllegal !== false) {
+                        alreadyGuessed.push(userGuess)
+                        startingScore-- 
+                    }
 
                      document.getElementById("guessedlet").innerHTML = alreadyGuessed;
                     
@@ -107,9 +104,6 @@
 
                  }
 
-
-                 console.log(computerWord.join(""))
-                 console.log(guessline.join(""))
 
                  if (computerWord.join("") === guessline.join("")) {
 
