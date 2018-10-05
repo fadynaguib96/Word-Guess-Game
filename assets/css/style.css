@@ -1,0 +1,95 @@
+body {
+    background-image: url("../images/box.jpg");
+    background-size: cover;
+    
+}
+
+#naav{
+    font-family: 'Monoton', cursive;
+}
+
+.box {
+  
+    background-color: #777777;
+    opacity: 0.9;
+    text-align:center;
+    margin-left:120px;
+    margin-right:120px;
+    font-size:25px;
+    border:1px solid black;
+}
+
+
+#intro {
+    color: aquamarine;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#lines {
+    color:navy;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+}
+
+#win {
+    color:navy;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#lose {
+    color:navy;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#tries {
+    color:navy;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#extra {
+    font-family: 'Merienda', cursive;
+}
+
+#guessedlet {
+    color:navy;
+    font-family: 'Merienda', cursive;
+}
+
+#reset {
+    color:navy;
+    font-family: 'Merienda', cursive;
+}
+
+#result {
+    color:navy;
+    font-family: 'Merienda', cursive;
+}
+
+#guessmes {
+    color:navy;
+    font-family: 'Merienda', cursive;
+}
+
+#start {
+    color:navy;
+    font-family: 'Merienda', cursive;
+}
+
+.footer {
+    width:100%;
+    padding-top: 5px;
+    padding-bottom:5px;
+    background: #777777;
+    color:white;
+    font-weight:bold;
+    font-size:12px;
+    font-family: sans-serif;
+    text-align: center;
+    position:fixed;    
+    bottom:0;          
+    left:0;     
+    border-top-color: red;
+    border-top-style: solid  ;     
+    border-top-width: 2px;
+    overflow: hidden; 
+}

@@ -6,278 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merienda|Monoton|Orbitron" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div>
-        <p>Start Your Guessing Playa</p>
+        <nav class="navbar navbar-light bg-light">
+                <span id="naav" class="navbar-brand mx-auto h1"> The Champions Hangman</span>
+              </nav>
+   
+
+    <div class="box" class="container">
+        <div class="row">
+            <div class="col col-xl-12">
+                <p id="intro">How well do you know champions league teams??</p>
+                <p id="start">Press Any Key To Start </p>
+                <p id="reset"></p>
+                <p id="lines"></p>
+                <p id="result"></p>
+                <p id="extra">Wins:<div><p id="win">0</p></div>
+                </p>
+                <p id="extra">Loses:<div><p  id="lose">0</p></div>
+                </p>
+                <p id="extra">Letters already guessed:<div id="guessedlet"></div>
+                </p>
+                <p id="guessmes"></p>
+                <p id="extra">Trys Left:<div id="tries"><p>7</p></div>
+                </p>
+            </div>
+        </div>
     </div>
 
+    <footer class="footer"> Copyrighted </footer>
 
-    <div>
-        <p id="start">Press Any Key To Start </p>
-        <p id="lines"></p>
-        <p>Wins:<div id="win">0</div>
-        </p>
-        <p>Loses:<div id="lose">0</div>
-        </p>
-        <p>Letters already guessed:<div id="guessedlet"></div>
-        </p>
-        <p>Tries Left:<div id="tries">5</div>
-        </p>
-    </div>
 
-    <script text="text/javascript">
 
+    <script text="text/javascript" src="assets/javascript/game.js">
 
-        // declare wins and losses 
 
-        var wins = 0;
-        var losses = 0;
-        var startingScore = 5;
-        // document.getElementById("win").innerHTML = wins;
 
-        //array of options
-        // var options = ["fcbarcelona", "realmadrid", "manchesterunited", "manchestercity", "liverpool", "tottenham", "athleticomadrid", "chelsea", "juventus"];
 
 
-        //computer randomly guesses
 
-        // var computerGuess = options[Math.floor(Math.random()*options.length)];
 
-        // console.log(computerGuess)
 
-        //split guesses words into array of strings
-        // var computerWord = [...computerGuess];
 
-        // console.log(computerWord)
 
-        //makes empty array and replaces strings with _
-
-        // var guessline = [];
-
-        // for (var i=0; i < computerGuess.length; i++) {
-        //     guessline[i]= " _ ";
-        // }
-        // console.log(guessline)
-
-        // var remainingLetters = guessline.length;
-
-        //joins _ into one word instead of strings 
-        // var guessline2 = guessline.join("");
-        // document.getElementById("lines").innerHTML = guessline2;
-
-        // var guessline2 = guessline.join("");
-
-        //starting meter
-
-        // var remaining = computerGuess.length
-        // var startingScore = 5;
-        // console.log(startingScore)
-
-        //empty array for wrong guesses
-
-        // var alreadyGuessed = [];
-        // console.log(alreadyGuessed)
-
-
-        // var options = ["fcbarcelona", "realmadrid", "manchesterunited", "manchestercity", "liverpool", "tottenham", "athleticomadrid", "chelsea", "juventus"];
-        // var computerGuess = options[Math.floor(Math.random() * options.length)];
-        // var computerWord = [...computerGuess];
-        // console.log(computerWord)
-        // var guessline = [];
-        // for (var i = 0; i < computerGuess.length; i++) {
-        //     guessline[i] = " _ ";
-        // }
-        // var remainingLetters = guessline.length;
-        // var guesslineJoined = guessline.join(" ");
-       
-        // var startingScore = 5;
-        // var alreadyGuessed = [];
-        // var userGuessArr = [];
-
-
-
-        // function for checking for letter in computerword
-
-
-
-        // function checkLetter(userGuess) {
-
-        //     for (var i = 0; i < computerWord.length; i++) {
-
-        //         if (computerWord[i] === userGuess) {
-        //             var isRight = false;
-
-        //             guessline[i] = userGuess;
-        //             guesslineJoined = guessline.join("");
-        //             document.getElementById("lines").innerHTML = guesslineJoined;
-        //             console.log(guesslineJoined)
-        //             remainingLetters--
-
-
-
-        //             console.log("correct")
-        //             console.log(guessline)
-        //             document.getElementById("lines").innerHTML = guesslineJoined;
-        //             console.log(remainingLetters)
-
-        //         }
-        //     }
-
-        //     if (isRight !== false) {
-
-        //         console.log("Try Again")
-        //         alreadyGuessed.push(userGuess)
-        //         document.getElementById("guessedlet").innerHTML = alreadyGuessed;
-        //         startingScore--
-        //         document.getElementById("tries").innerHTML = startingScore;
-
-
-        //     }
-
-        // }
-
-
-        // function to restart game 
-
-        document.onkeyup = function resetGame () {
-            
-            var startGame =String.fromCharCode(event.keyCode).toLowerCase();
-            document.getElementById("start").innerHTML = "";
-             var options = ["fcbarcelona", "realmadrid", "manchesterunited", "manchestercity", "liverpool", "tottenham", "athleticomadrid", "chelsea", "juventus"]
-
-            var computerGuess = options[Math.floor(Math.random() * options.length)];
-         
-            var computerWord = [...computerGuess];
-            console.log(computerWord)
-            var guessline = [];
-            console.log(guessline)
-            for (var i = 0; i < computerGuess.length; i++) {
-                guessline[i] = " _ ";
-            }
-            console.log(guessline)
-            var remainingLetters = guessline.length;
-            
-            var guesslineJoined = guessline.join("");
-            document.getElementById("lines").innerHTML = guesslineJoined;
-            var startingScore = 5;
-            document.getElementById("tries").innerHTML = startingScore;
-            var alreadyGuessed = [];
-            document.getElementById("guessedlet").innerHTML =alreadyGuessed;
-
-            var userGuessArr = [];
-            console.log(userGuessArr)
-            
-          
-        
-
-
-
-
-
-        //when user starts interacting
-
-
-
-        document.onkeyup = function hangMan() {
-
-            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-            userGuessArr.push(userGuess)
-            console.log(userGuessArr)
-            console.log(userGuess)
-
-             //   for (var i=0; i < userGuessArr.length ; i++){
-
-                //         if (userGuess === userGuessArr[i]) {
-                //             var isIllegal = false
-                //             remainingLetters++
-                //             console.log(remainingLetters)
-                //             userGuessArr.pop(userGuess)
-
-                //         }
-
-
-                //     }
-
-
-                //    if (isIllegal !== false) {}
-
-            if (startingScore > 0) {
-
-
-
-
-
-                for (var i = 0; i < computerWord.length; i++) {
-
-                    if (computerWord[i] === userGuess) {
-                        var isRight = false;
-
-                        guessline[i] = userGuess;
-                        guesslineJoined = guessline.join("");
-                        document.getElementById("lines").innerHTML = guesslineJoined;
-                        remainingLetters--
-
-
-
-                        console.log("correct")
-                        console.log(guessline)
-                        document.getElementById("lines").innerHTML = guesslineJoined;
-                        console.log(remainingLetters)
-
-                    }
-                }
-
-                if (isRight !== false) {
-
-                    console.log("Try Again")
-                    alreadyGuessed.push(userGuess)
-                    document.getElementById("guessedlet").innerHTML = alreadyGuessed;
-                    startingScore--
-                    document.getElementById("tries").innerHTML = startingScore;
-
-
-                }
-
-
-                console.log(computerWord.join(""))
-                console.log(guessline.join(""))
-
-                if (computerWord.join("") === guessline.join("")) {
-                    console.log("Congrats!!! You won!")
-                    wins++
-                    document.getElementById("win").innerHTML = wins;
-                   resetGame();
-                }
-
-
-
-            }
-
-            else {
-                losses++
-                document.getElementById("lose").innerHTML = losses;
-                resetGame();
-
-            }
-
-
-         }
-
-
-        }
-
-
-     
-        
-
-
-
-
-               
 
     </script>
 
